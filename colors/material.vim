@@ -107,7 +107,7 @@ hi! link Question MoreMsg
 hi! link ErrorMsg Statement
 
 " Diff
-hi! link DiffAdd Visual
+hi! link DiffAdd Search
 call s:highlight('DiffDelete', '0', '0')
 hi! link DiffChange Visual
 hi! link DiffText DiffAdd
