@@ -6,7 +6,7 @@ See also [nkouevda/vim-monokai](https://github.com/nkouevda/vim-monokai).
 
 ## Example
 
-![vim-material.png](https://github.com/nkouevda/images/raw/master/vim-material.png)
+![vim-material.png](https://github.com/nkouevda/images/raw/main/vim-material.png)
 
 ## License
 
