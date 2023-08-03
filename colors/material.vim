@@ -29,14 +29,14 @@ let g:terminal_ansi_colors = repeat(values(s:ansi_hex), 2)
 
 function! s:highlight(group, fg, bg, ...)
   let l:attrs = a:0 ? a:1 : 'NONE'
-  exe 'hi ' . a:group . ' cterm=' . l:attrs . ' gui=' . l:attrs
+  exe 'hi ' .. a:group .. ' cterm=' .. l:attrs .. ' gui=' .. l:attrs
   if a:fg != ''
-    exe 'hi ' . a:group . ' ctermfg=' . s:colors[a:fg][0]
-    exe 'hi ' . a:group . ' guifg=' . s:colors[a:fg][1]
+    exe 'hi ' .. a:group .. ' ctermfg=' .. s:colors[a:fg][0]
+    exe 'hi ' .. a:group .. ' guifg=' .. s:colors[a:fg][1]
   endif
   if a:bg != ''
-    exe 'hi ' . a:group . ' ctermbg=' . s:colors[a:bg][0]
-    exe 'hi ' . a:group . ' guibg=' . s:colors[a:bg][1]
+    exe 'hi ' .. a:group .. ' ctermbg=' .. s:colors[a:bg][0]
+    exe 'hi ' .. a:group .. ' guibg=' .. s:colors[a:bg][1]
   endif
 endfunction
 
