@@ -27,17 +27,17 @@ let s:ansi = filter(copy(s:colors), { k -> k < 8 })
 let s:ansi_hex = map(copy(s:ansi), { k, v -> v[1] })
 let g:terminal_ansi_colors = repeat(values(s:ansi_hex), 2)
 
-function! s:highlight(group, fg, bg, ...)
+function! s:highlight(group, fg_key, bg_key, ...)
   let l:attrs = a:0 ? a:1 : 'NONE'
   exe 'hi ' .. a:group .. ' cterm=' .. l:attrs .. ' gui=' .. l:attrs
 
-  let l:fg = get(s:colors, a:fg, ['NONE', 'NONE'])
-  exe 'hi ' .. a:group .. ' ctermfg=' .. l:fg[0]
-  exe 'hi ' .. a:group .. ' guifg=' .. l:fg[1]
+  let l:fgs = get(s:colors, a:fg_key, ['NONE', 'NONE'])
+  exe 'hi ' .. a:group .. ' ctermfg=' .. l:fgs[0]
+  exe 'hi ' .. a:group .. ' guifg=' .. l:fgs[1]
 
-  let l:bg = get(s:colors, a:bg, ['NONE', 'NONE'])
-  exe 'hi ' .. a:group .. ' ctermbg=' .. l:bg[0]
-  exe 'hi ' .. a:group .. ' guibg=' .. l:bg[1]
+  let l:bgs = get(s:colors, a:bg_key, ['NONE', 'NONE'])
+  exe 'hi ' .. a:group .. ' ctermbg=' .. l:bgs[0]
+  exe 'hi ' .. a:group .. ' guibg=' .. l:bgs[1]
 endfunction
 
 " General
